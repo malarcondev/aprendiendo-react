@@ -2,7 +2,7 @@ import { useForm } from '../hooks/useForm';
 
 export const FormWithCustomHook = () => {
 
-    const { formState, onInputChange } = useForm({
+    const { formState, onInputChange, onResetForm } = useForm({
         username: '',
         email: '',
         password: ''
@@ -40,6 +40,15 @@ export const FormWithCustomHook = () => {
             value={ password }
             onChange={ onInputChange }
         />
+
+       
+        <div class="d-grid gap-2">
+            <button 
+                className='btn btn-primary mt-2'
+                onClick={ onResetForm }>
+                borrar
+            </button>
+        </div>
     </>
   )
 }
